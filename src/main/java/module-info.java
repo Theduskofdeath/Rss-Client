@@ -2,7 +2,11 @@ module rssclient
 {
     requires javafx.controls;
     requires javafx.fxml;
+    requires vertx.core;
+    requires org.json;
+    requires spring.web;
+    requires gson;
 
-    opens org.openjfx to javafx.fxml;
-    exports org.openjfx;
+    opens com.jd.rss to javafx.fxml;
+    exports com.jd.rss;
 }

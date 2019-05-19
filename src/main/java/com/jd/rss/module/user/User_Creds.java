@@ -2,26 +2,26 @@ package com.jd.rss.module.user;
 
 public class User_Creds
 {
-    private String  _uname;
-    private String  _passwd;
+    private String username;
+    private String password;
 
-    public String get_uname()
+    public String getUsername()
     {
-        return _uname;
+        return username;
     }
 
-    public void set_uname(String _uname)
+    public void setUsername(String username)
     {
-        this._uname = _uname;
+        this.username = username;
     }
 
-    public String get_passwd()
+    public String getPassword()
     {
-        return _passwd;
+        return password;
     }
 
-    public void set_passwd(String _passwd)
+    public void setPassword(String password)
     {
-        this._passwd = _passwd;
+        this.password = password;
     }
 }

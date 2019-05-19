@@ -14,11 +14,12 @@ public class network {
     private HttpHeaders headers;
     private HttpStatus status;
 
-    public network() {
+    public network(String token) {
         this.rest = new RestTemplate();
         this.headers = new HttpHeaders();
         headers.add("Content-Type", "application/json");
         headers.add("Accept", "*/*");
+        headers.add("Authorization", token);
     }
 
     public String get(String uri) {
