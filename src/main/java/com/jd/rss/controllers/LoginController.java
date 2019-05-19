@@ -8,17 +8,18 @@ import javafx.scene.control.TextField;
 
 public class LoginController
 {
-    @FXML
-    private Button Signin_button;
 
     @FXML
-    private PasswordField password_field;
+    private TextField Login_Field;
 
     @FXML
-    private TextField username_field;
+    private PasswordField Password_Field;
 
     @FXML
-    private Button register_button;
+    private Button Register_Button;
+
+    @FXML
+    private Button SignIn_Button;
 
     @FXML
     void register(ActionEvent event) {
