@@ -1,16 +1,19 @@
 package com.jd.rss.module.Actions;
 
 import com.google.gson.Gson;
-import com.jd.rss.module.user.User_Fav;
+import com.jd.rss.module.Feed.SendFavFeed;
 import com.jd.rss.module.network.network;
+import com.jd.rss.module.user.User_Session;
 import org.springframework.http.HttpStatus;
 
 import java.util.List;
 import java.util.Arrays;
+import java.util.prefs.*;
 
 public class Users
 {
-    private network client = new network("");
+    private Preferences pref = Preferences.userNodeForPackage(User_Session.class);
+    private network client = new network(pref.get("Token", ""));
 
     public String me()
     {
@@ -29,7 +32,7 @@ public class Users
     public String favFeeds_update(String feed_id)
     {
         Gson objson = new Gson();
-        User_Fav    fav = new User_Fav();
+        SendFavFeed fav = new SendFavFeed();
         String[]  parsed = feed_id.split("\\s+|,\\s*");
         List<String>    tmp = Arrays.asList(parsed);
         String  json;

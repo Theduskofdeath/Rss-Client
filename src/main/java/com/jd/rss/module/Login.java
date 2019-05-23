@@ -15,7 +15,7 @@ public class Login
     User_Creds cred = new User_Creds();
     User_Session sess = new User_Session();
 
-    network client = new network();
+    //network client = new network();
 
     JsonObject  obj;
 

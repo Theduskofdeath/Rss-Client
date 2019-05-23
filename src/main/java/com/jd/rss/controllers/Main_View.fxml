@@ -59,9 +59,10 @@
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu mnemonicParsing="false" text="User">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+                  <MenuItem fx:id="goToProfile" mnemonicParsing="false" text="Profile" />
+              <MenuItem fx:id="disconnectUser" mnemonicParsing="false" text="Disconnect" />
             </items>
           </Menu>
         </menus>

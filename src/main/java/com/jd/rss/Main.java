@@ -8,6 +8,10 @@ import javafx.scene.Scene;
 
 import com.jd.rss.controllers.LoginController;
 
+import java.net.URL;
+import java.nio.file.Paths;
+import java.util.prefs.*;
+
 public class Main extends Application
 {
 
@@ -21,12 +25,13 @@ public class Main extends Application
     {
         LoginController controller;
 
-        FXMLLoader  loader = new FXMLLoader(getClass().getResource("src/main/ressources/Views/Login_View.fxml"));
-        Parent root = loader.load();
-        primaryStage.setTitle("Rss Feed Client");
-        controller = loader.getController();
+        URL url = Paths.get("src/main/ressources/Views/Login_View.fxml").toUri().toURL();
+        Parent root = FXMLLoader.load(url);
+        //Parent root = FXMLLoader.load(getClass().getResource("Login_View.fxml"));
+        primaryStage.setTitle("Rss Feeds Client");
+        //controller = loader.getController();
 
-        primaryStage.setScene(new Scene(root, 1280, 720));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
 
     }

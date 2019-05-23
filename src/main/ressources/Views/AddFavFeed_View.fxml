@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="200.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jd.rss.controllers.AddFavFeedViewController">
+   <children>
+      <Button fx:id="SendFavFeedList_Button" layoutX="428.0" layoutY="161.0" mnemonicParsing="false" onAction="#sendNewFav" text="Send" />
+      <TextArea fx:id="FavFeedList_TextArea" layoutX="24.0" layoutY="72.0" prefHeight="84.0" prefWidth="457.0" promptText="Feed_ID, FeedID, ....." />
+   </children>
+</AnchorPane>

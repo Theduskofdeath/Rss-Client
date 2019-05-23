@@ -3,12 +3,16 @@ package com.jd.rss.module.Actions;
 import com.jd.rss.module.network.network;
 import com.jd.rss.module.Feed.SendFeed;
 
+import com.jd.rss.module.user.User_Session;
 import org.springframework.http.HttpStatus;
 import com.google.gson.Gson;
 
-public class Feed
+import java.util.prefs.Preferences;
+
+public class Feeds
 {
-    private network client = new network("");
+    private Preferences pref = Preferences.userNodeForPackage(User_Session.class);
+    private network client = new network(pref.get("Token", ""));
 
     public String Feeds()
     {
@@ -48,9 +52,9 @@ public class Feed
         client.delete("/feeds/" + feed_id);
         if (client.getStatus() == HttpStatus.NO_CONTENT)
         {
-            System.out.println("Feed " + feed_id + " has been deleted");
+            System.out.println("Feeds " + feed_id + " has been deleted");
         }
         else
-            System.out.println("Feed " + feed_id + " don't exist");
+            System.out.println("Feeds " + feed_id + " don't exist");
     }
 }
