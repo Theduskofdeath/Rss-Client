@@ -36,8 +36,8 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="AddFeed_Button" layoutX="14.0" layoutY="54.0" mnemonicParsing="false" text="Add Feed" />
-                        <Button fx:id="DeleteFeed_Button" layoutX="107.0" layoutY="54.0" mnemonicParsing="false" text="Delete Feed" />
+                        <Button fx:id="AddFeed_Button" layoutX="14.0" layoutY="54.0" mnemonicParsing="false" onAction="#openWindowToAddANewFeed" text="Add Feed" />
+                        <Button fx:id="DeleteFeed_Button" layoutX="107.0" layoutY="54.0" mnemonicParsing="false" onAction="#deleteFeed" text="Delete Feed" />
                      </children>
                   </AnchorPane>
             </content>
@@ -61,7 +61,7 @@
           <Menu mnemonicParsing="false" text="User">
             <items>
                   <MenuItem fx:id="goToProfile" mnemonicParsing="false" onAction="#loadProfile" text="Profile" />
-              <MenuItem fx:id="disconnectUser" mnemonicParsing="false" text="Disconnect" />
+              <MenuItem fx:id="disconnectUser" mnemonicParsing="false" onAction="#logoutFromMain" text="Disconnect" />
             </items>
           </Menu>
         </menus>

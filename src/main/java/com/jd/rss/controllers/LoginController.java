@@ -113,7 +113,7 @@ public class LoginController implements Initializable
 
     private void toMainView(ActionEvent event) throws IOException
     {
-        URL url = Paths.get("com/jd/rss/controllers/Main_View.fxml").toUri().toURL();
+        URL url = Paths.get("ressources/Views/Main_View.fxml").toUri().toURL();
         Parent toMainView = FXMLLoader.load(url);
         Scene mainViewScene = new Scene(toMainView);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

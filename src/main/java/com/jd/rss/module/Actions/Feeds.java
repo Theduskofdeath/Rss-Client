@@ -42,9 +42,22 @@ public class Feeds
         return "KO";
     }
 
-    public void addNewFeed(final String feed_id)
+    public String addNewFeed(final String feed_uri)
     {
+        Gson objson = new Gson();
+        String  json;
+        SendFeed obj = new SendFeed();
 
+        obj.setUri(feed_uri);
+        json = objson.toJson(obj);
+        client.post("/feeds", json);
+        if (client.getStatus() == HttpStatus.CREATED)
+        {
+            System.out.println("Send New Feed : OK");
+            return "OK";
+        }
+        System.out.println("Send New Feed  : Request Failed");
+        return "KO";
     }
 
     public void deleteFeed(final String feed_id)

@@ -77,16 +77,14 @@ public class ProfileViewController implements Initializable
     void logout(ActionEvent event) throws IOException
     {
         Utils _u = new Utils();
-        Preferences pref = Preferences.userNodeForPackage(User_Session.class);
 
-        pref.remove("Token");
-        _u.changeWindowOnAction("src/main/ressources/Views/Login_View.fxml", event);
+        _u.logoutFunc(event);
     }
 
     @FXML
     void toMainView(ActionEvent event) throws IOException
     {
-        URL url = Paths.get("com/jd/rss/controllers/Main_View.fxml").toUri().toURL();
+        URL url = Paths.get("ressources/Views/Main_View.fxml").toUri().toURL();
         Parent toMainView = FXMLLoader.load(url);
         Scene mainViewScene = new Scene(toMainView);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

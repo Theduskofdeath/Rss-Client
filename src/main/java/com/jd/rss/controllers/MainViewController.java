@@ -108,4 +108,28 @@ public class MainViewController
 
         _u.changeWindowOnAction("src/main/ressources/Views/Profile_View.fxml", event);
     }
+
+    @FXML
+    private void logoutFromMain(ActionEvent event) throws IOException
+    {
+        Utils _u = new Utils();
+
+        _u.logoutFunc(event);
+    }
+
+    @FXML
+    private void deleteFeed(ActionEvent event) throws IOException
+    {
+        Utils _u = new Utils();
+
+        _u.changeWindowOnAction("src/main/ressources/Views/DeleteFeedView.fxml", event);
+    }
+
+    @FXML
+    private void openWindowToAddANewFeed(ActionEvent event) throws IOException
+    {
+        Utils _u = new Utils();
+
+        _u.changeWindowOnAction("src/main/ressources/Views/AddFeedView.fxml", event);
+    }
 }

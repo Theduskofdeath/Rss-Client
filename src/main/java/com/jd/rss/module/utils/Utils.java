@@ -1,5 +1,6 @@
 package com.jd.rss.module.utils;
 
+import com.jd.rss.module.user.User_Session;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,6 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.prefs.Preferences;
 
 public class Utils
 {
@@ -35,5 +37,14 @@ public class Utils
 
         window.setScene(mainViewScene);
         window.show();
+    }
+
+    public void logoutFunc(ActionEvent event) throws IOException
+    {
+        Utils _u = new Utils();
+        Preferences pref = Preferences.userNodeForPackage(User_Session.class);
+
+        pref.remove("Token");
+        _u.changeWindowOnAction("src/main/ressources/Views/Login_View.fxml", event);
     }
 }
