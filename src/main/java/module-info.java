@@ -12,5 +12,6 @@ module rss.client2.main
     opens com.jd.rss to javafx.fxml;
     opens com.jd.rss.controllers to javafx.fxml;
     opens com.jd.rss.module.user to gson;
+    opens com.jd.rss.module.classic to gson;
     exports com.jd.rss;
 }

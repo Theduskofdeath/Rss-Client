@@ -20,6 +20,9 @@ public class AddFeedViewController implements Initializable
     @FXML
     private TextArea insertFeedUrlArea;
 
+    @FXML
+    private Button Back_Exec;
+
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -42,5 +45,13 @@ public class AddFeedViewController implements Initializable
         }
         else
             _u.changeWindowOnAction("src/main/ressources/Views/Main_View.fxml", event);
+    }
+
+    @FXML
+    private void returnToMain(ActionEvent event) throws IOException
+    {
+        Utils _u = new Utils();
+
+        _u.changeWindowOnAction("src/main/ressources/Views/Main_View.fxml", event);
     }
 }

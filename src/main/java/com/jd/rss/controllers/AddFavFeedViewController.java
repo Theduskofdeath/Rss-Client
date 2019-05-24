@@ -44,4 +44,12 @@ public class AddFavFeedViewController implements Initializable
         }
         _u.changeWindowOnAction("src/main/ressources/Views/Profile_View.fxml",event);
     }
+
+    @FXML
+    private void backToProfile(ActionEvent event) throws IOException
+    {
+        Utils _u = new Utils();
+
+        _u.changeWindowOnAction("src/main/ressources/Views/Profile_View.fxml", event);
+    }
 }

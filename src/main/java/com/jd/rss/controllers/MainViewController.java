@@ -17,6 +17,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 
 /**
  * Sample Skeleton for 'Main_View.fxml' Controller Class
@@ -41,6 +43,18 @@ public class MainViewController
 
     @FXML // fx:id="DeleteFeed_Button"
     private Button DeleteFeed_Button; // Value injected by FXMLLoader
+
+    @FXML
+    private MenuItem MenuDelete_Item;
+
+    @FXML
+    private MenuItem goToProfile;
+
+    @FXML
+    private MenuItem disconnectUser;
+
+    @FXML
+    private MenuBar mainMenuBar_mb;
 
     private Feeds n_feeds = new Feeds();
     private Users n_user = new Users();
@@ -106,7 +120,7 @@ public class MainViewController
     {
         Utils _u = new Utils();
 
-        _u.changeWindowOnAction("src/main/ressources/Views/Profile_View.fxml", event);
+        _u.changeWindowOnActionFromMenu("src/main/ressources/Views/Profile_View.fxml", event, mainMenuBar_mb);
     }
 
     @FXML
@@ -114,7 +128,7 @@ public class MainViewController
     {
         Utils _u = new Utils();
 
-        _u.logoutFunc(event);
+        _u.logoutFuncFromMenu(event, mainMenuBar_mb);
     }
 
     @FXML

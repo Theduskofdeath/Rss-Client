@@ -8,12 +8,13 @@
 
 <AnchorPane prefHeight="200.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jd.rss.controllers.DeleteFeedViewController">
    <children>
-      <Button fx:id="Delete_Executor" layoutX="407.0" layoutY="161.0" mnemonicParsing="false" onAction="#deleteFeed" text="Delete Feed" />
-      <TextArea fx:id="DeleteFeed_Area" layoutX="8.0" layoutY="65.0" prefHeight="89.0" prefWidth="483.0" promptText="Insert Feed ID here" />
+      <Button fx:id="Delete_Executor" layoutX="465.0" layoutY="160.0" mnemonicParsing="false" onAction="#deleteFeed" text="Delete Feed" />
+      <TextArea fx:id="DeleteFeed_Area" layoutX="47.0" layoutY="64.0" prefHeight="89.0" prefWidth="483.0" promptText="Insert Feed ID here" />
       <Label layoutX="19.0" layoutY="21.0" text="Insert the Feed ID in the Text Area to delete it (Work only as a Admin)">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
+      <Button fx:id="Back_Button" layoutX="19.0" layoutY="160.0" mnemonicParsing="false" onAction="#returnToMain" text="Back" />
    </children>
 </AnchorPane>

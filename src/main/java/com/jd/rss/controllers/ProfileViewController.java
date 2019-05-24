@@ -2,7 +2,6 @@ package com.jd.rss.controllers;
 
 import com.google.gson.Gson;
 import com.jd.rss.module.user.User_Info;
-import com.jd.rss.module.user.User_Session;
 import com.jd.rss.module.utils.Utils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,7 +20,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
-import java.util.prefs.Preferences;
 
 
 public class ProfileViewController implements Initializable
@@ -84,11 +82,16 @@ public class ProfileViewController implements Initializable
     @FXML
     void toMainView(ActionEvent event) throws IOException
     {
-        URL url = Paths.get("ressources/Views/Main_View.fxml").toUri().toURL();
-        Parent toMainView = FXMLLoader.load(url);
-        Scene mainViewScene = new Scene(toMainView);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Utils _u = new Utils();
 
-        window.setScene(mainViewScene);
+        _u.changeWindowOnAction("src/main/ressources/Views/Main_View.fxml", event);
+    }
+
+    @FXML
+    void toFavEdit(ActionEvent event) throws IOException
+    {
+        Utils _u = new Utils();
+
+        _u.changeWindowOnAction("src/main/ressources/Views/AddFavFeed_View.fxml", event);
     }
 }

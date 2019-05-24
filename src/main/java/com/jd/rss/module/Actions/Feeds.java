@@ -22,7 +22,7 @@ public class Feeds
         headers = new HttpHeaders();
         pref = Preferences.userNodeForPackage(User_Session.class);
         headers.add("Content-Type", "application/json");
-        headers.add("Authorization", pref.get("Token", ""));
+        headers.add("Authorization", "Bearer " + pref.get("Token", ""));
         client = new network(headers);
     }
 

@@ -19,10 +19,14 @@ public class Users
 
     public Users()
     {
+        String token;
         headers = new HttpHeaders();
         pref = Preferences.userNodeForPackage(User_Session.class);
+        token = pref.get("Token", "");
+        System.out.println("The Token is : " + token);
         headers.add("Content-Type", "application/json");
-        headers.add("Authorization", pref.get("Token", ""));
+        headers.add("Authorization", "Bearer " + token);
+        headers.add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36");
         client = new network(headers);
     }
 
@@ -30,7 +34,7 @@ public class Users
     {
         String  rez;
 
-        rez = client.post("/users/me", "");
+        rez = client.get("/users/me");
         if (rez != null)
         {
             System.out.println("Request OK for Profle");

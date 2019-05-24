@@ -6,15 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="200.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jd.rss.controllers.AddFeedViewController">
    <children>
-      <Button fx:id="sendNewFeed" layoutX="396.0" layoutY="161.0" mnemonicParsing="false" onAction="#sendFeed" text="Add new Feed" />
+      <Button fx:id="sendNewFeed" layoutX="379.0" layoutY="160.0" mnemonicParsing="false" onAction="#sendFeed" text="Add new Feed" />
       <TextArea fx:id="insertFeedUrlArea" layoutX="41.0" layoutY="54.0" prefHeight="93.0" prefWidth="419.0" promptText="New Feed url like : https://www.lemonde.fr/rss/une.xml" />
       <Label layoutX="122.0" layoutY="22.0" text="Write the new feed url in the text area.">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
+      <Button fx:id="Back_Exec" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#returnToMain" text="Back" />
    </children>
 </AnchorPane>

@@ -20,6 +20,9 @@ public class DeleteFeedViewController implements Initializable
     @FXML
     private TextArea DeleteFeed_Area;
 
+    @FXML
+    private Button Back_Button;
+
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -35,6 +38,14 @@ public class DeleteFeedViewController implements Initializable
 
         f_id = DeleteFeed_Area.getText();
         f_to_delete.deleteFeed(f_id);
+        _u.changeWindowOnAction("src/main/ressources/Views/Main_View.fxml", event);
+    }
+
+    @FXML
+    private void returnToMain(ActionEvent event) throws IOException
+    {
+        Utils _u = new Utils();
+
         _u.changeWindowOnAction("src/main/ressources/Views/Main_View.fxml", event);
     }
 }

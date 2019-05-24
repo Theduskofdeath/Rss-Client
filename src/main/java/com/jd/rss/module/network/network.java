@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class network {
 
-    private String server = "http://127.0.0.1:80";
+    private String server = "https://feeded-server.herokuapp.com/";
     private RestTemplate rest;
     private HttpHeaders headers;
     private HttpStatus status;

@@ -1,11 +1,13 @@
 package com.jd.rss.module.utils;
 
+import com.jd.rss.Main;
 import com.jd.rss.module.user.User_Session;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuBar;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -39,6 +41,20 @@ public class Utils
         window.show();
     }
 
+    public void changeWindowOnActionFromMenu(String nextView, ActionEvent event, MenuBar menu) throws IOException
+    {
+        URL url = Paths.get(nextView).toUri().toURL();
+        Parent toNextView = FXMLLoader.load(url);
+
+        Stage stage = (Stage) menu.getScene().getWindow();
+
+        Scene mainViewScene = new Scene(toNextView);
+        //Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        stage.setScene(mainViewScene);
+        stage.show();
+    }
+
     public void logoutFunc(ActionEvent event) throws IOException
     {
         Utils _u = new Utils();
@@ -46,5 +62,14 @@ public class Utils
 
         pref.remove("Token");
         _u.changeWindowOnAction("src/main/ressources/Views/Login_View.fxml", event);
+    }
+
+    public void logoutFuncFromMenu(ActionEvent event, MenuBar menu) throws IOException
+    {
+        Utils _u = new Utils();
+        Preferences pref = Preferences.userNodeForPackage(User_Session.class);
+
+        pref.remove("Token");
+        _u.changeWindowOnActionFromMenu("src/main/ressources/Views/Login_View.fxml", event, menu);
     }
 }
