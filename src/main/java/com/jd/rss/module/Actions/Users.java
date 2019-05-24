@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.jd.rss.module.Feed.SendFavFeed;
 import com.jd.rss.module.network.network;
 import com.jd.rss.module.user.User_Session;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 
 import java.util.List;
@@ -12,8 +13,18 @@ import java.util.prefs.*;
 
 public class Users
 {
-    private Preferences pref = Preferences.userNodeForPackage(User_Session.class);
-    private network client = new network(pref.get("Token", ""));
+    private Preferences pref;
+    private network client;
+    HttpHeaders headers;
+
+    public Users()
+    {
+        headers = new HttpHeaders();
+        pref = Preferences.userNodeForPackage(User_Session.class);
+        headers.add("Content-Type", "application/json");
+        headers.add("Authorization", pref.get("Token", ""));
+        client = new network(headers);
+    }
 
     public String me()
     {

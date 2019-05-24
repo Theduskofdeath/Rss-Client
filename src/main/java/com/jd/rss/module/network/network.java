@@ -9,17 +9,16 @@ import org.springframework.web.client.RestTemplate;
 
 public class network {
 
-    private String server = "http://localhost:8080";
+    private String server = "http://127.0.0.1:80";
     private RestTemplate rest;
     private HttpHeaders headers;
     private HttpStatus status;
 
-    public network(String token) {
+    public network(HttpHeaders headers) {
         this.rest = new RestTemplate();
-        this.headers = new HttpHeaders();
-        headers.add("Content-Type", "application/json");
-        headers.add("Accept", "*/*");
-        headers.add("Authorization", token);
+        this.headers = headers;
+        //headers.add("Accept", "*/*");
+
     }
 
     public String get(String uri) {

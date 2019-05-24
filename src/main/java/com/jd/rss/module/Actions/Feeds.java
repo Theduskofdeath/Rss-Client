@@ -1,9 +1,11 @@
 package com.jd.rss.module.Actions;
 
+import com.jd.rss.module.classic.Feed;
 import com.jd.rss.module.network.network;
 import com.jd.rss.module.Feed.SendFeed;
 
 import com.jd.rss.module.user.User_Session;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import com.google.gson.Gson;
 
@@ -11,8 +13,18 @@ import java.util.prefs.Preferences;
 
 public class Feeds
 {
-    private Preferences pref = Preferences.userNodeForPackage(User_Session.class);
-    private network client = new network(pref.get("Token", ""));
+    private Preferences pref;
+    private network client;
+    HttpHeaders headers;
+
+    public Feeds()
+    {
+        headers = new HttpHeaders();
+        pref = Preferences.userNodeForPackage(User_Session.class);
+        headers.add("Content-Type", "application/json");
+        headers.add("Authorization", pref.get("Token", ""));
+        client = new network(headers);
+    }
 
     public String Feeds()
     {
